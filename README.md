@@ -11,23 +11,20 @@
 - 📂 **JSON 整合**：開啟資料夾時自動載入描述、手動載入也支援（不含副檔名比對）  
 - 🧹 **描述清除**：一鍵清空所有圖片描述
 
-
-![image](https://github.com/pasoki/image_viewer/blob/main/images/user_interface.png?raw=true)
 <hr>
 <h2>🖥️ 執行畫面預覽</h2>
-<blockquote>
-<p>圖片卡片包含：</p>
-<ul>
-<li>上方縮圖</li>
-<li>中間檔名（自定樣式）</li>
-<li>下方描述欄（可即時儲存）</li>
-</ul>
-</blockquote>
 <p>左側為資料夾選擇器，可收合以擴大主視窗寬度。操作按鈕置於上方工具列。</p>
+
+![image](https://github.com/pasoki/image_viewer/blob/main/images/user_interface.png?raw=true)
+
 <hr>
 <h2>🚀 執行方式</h2>
 <h3>安裝環境（一次性）：</h3>
+<pre><code class="language-bash">git clone https://github.com/pasoki/image_viewer.git
+</code></pre>
 <pre><code class="language-bash">pip install PySide6 natsor
+</code></pre>
+<pre><code class="language-bash">cd image_viewer
 </code></pre>
 <pre><code class="language-bash">python image_viewer.py
 </code></pre>
@@ -38,8 +35,8 @@
 </code></pre>
 <h3>範例內容：</h3>
 <pre><code class="language-json">{
-  &quot;cat_01&quot;: &quot;這是一隻愛的貓咪&quot;,
-  &quot;girl_002&quot;: &quot;穿著洋裝的女孩&quot;
+  &quot;cat_01.png&quot;: &quot;這是一隻愛的貓咪&quot;,
+  &quot;girl_002.png&quot;: &quot;穿著洋裝的女孩&quot;
 }
 
 </code></pre>
