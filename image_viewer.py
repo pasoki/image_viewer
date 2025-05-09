@@ -242,24 +242,25 @@ class ImageViewer(QWidget):
                 border-radius: 10px;
             }
         """)
+
         layout = QVBoxLayout(frame)
 
         img_path = os.path.join(self.image_folder, image_name)
         original_pixmap = QPixmap(img_path)
 
-        # 計算等比縮放寬度（不超過 300px）
+        # 根據圖片實際尺寸縮放，最大寬或高為 300px，保持比例
         max_width = 300
-        if original_pixmap.width() > max_width:
-            scaled_pixmap = original_pixmap.scaledToWidth(max_width, Qt.SmoothTransformation)
-        else:
-            scaled_pixmap = original_pixmap
+        max_height = 400
+        scaled_pixmap = original_pixmap.scaled(
+            max_width, max_height, Qt.KeepAspectRatio, Qt.SmoothTransformation
+        )
 
         label = QLabel()
         label.setPixmap(scaled_pixmap)
         label.setAlignment(Qt.AlignCenter)
         label.mouseDoubleClickEvent = lambda e: self.copy_description(image_name)
 
-        # 設定卡片寬度跟圖片寬度對齊（外框稍寬）
+        # 設定卡片寬度根據縮圖大小擴展（略加 padding）
         frame.setFixedWidth(scaled_pixmap.width() + 20)
 
         name_label = QLabel(image_name)
